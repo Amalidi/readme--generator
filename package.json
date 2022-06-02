@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Amalidi/readme--generator/issues"
   },
-  "homepage": "https://github.com/Amalidi/readme--generator#readme"
+  "homepage": "https://github.com/Amalidi/readme--generator#readme",
+  "dependencies": {
+    "date-fns": "^2.28.0"
+  }
 }
