@@ -35,7 +35,7 @@ npm install
 
 ## Usage
 
-After cloning the repo and installing npm, you will need to navigate to the main js file which index.js.
+After cloning the repo and installing npm, you will need to navigate to the main js file which is index.js.
 
 Once installed run the following command:
 
