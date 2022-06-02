@@ -53,4 +53,4 @@ Please click [here]() to view the demo of the application.
 
 ## Questions
 
-If you have any question please conatct me on my [email](A.idi12@outlook.com)
+If you have any questions about the repo, please contact me via [email](A.idi12@outlook.com). You can find more of my work on my [GitHub profile](https://github.com/Amalidi).
