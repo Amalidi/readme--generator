@@ -96,9 +96,10 @@ const generateReadMe = (answers) => {
   ${answers.confirmTests ? `- [Tests](#tests)` : ""}
   - [Questions](#questions)
   - [Github](#github)
+
   ## Description
 
-  ${answers.description}
+  ${answers.Description}
 
   ${
     answers.confirmInstallation
@@ -144,17 +145,10 @@ const generateReadMe = (answers) => {
   })`;
 };
 
-// 3. declare your init function to ask questions
 const init = async () => {
-  // 1. get answers for first set of questions
   const answers = await inquirer.prompt(prompts);
-
-  // 2. Generate the Readme
   const readMe = generateReadMe(answers);
-
-  // 3. write to file generate readme
   fs.writeFileSync("generated-ReadMe.md", readMe);
 };
 
-// 4. start your application
 init();
