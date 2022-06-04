@@ -84,7 +84,7 @@ const prompts = [
 ];
 
 const generateReadMe = (answers) => {
-  return `#${answers.title} ![MIT](https://img.shields.io/badge/${
+  return `# ${answers.title} ![MIT](https://img.shields.io/badge/${
     answers.license
   }-License-green)
   ## Table of Contents
