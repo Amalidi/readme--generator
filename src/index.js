@@ -84,7 +84,7 @@ const prompts = [
 ];
 
 const generateReadMe = (answers) => {
-  return `# Title: ${answers.title} ![MIT](https://img.shields.io/badge/${
+  return `#${answers.title} ![MIT](https://img.shields.io/badge/${
     answers.license
   }-License-green)
   ## Table of Contents
@@ -97,12 +97,16 @@ const generateReadMe = (answers) => {
   - [Questions](#questions)
   - [Github](#github)
   ## Description
-  ${answers.title}
+
+  ${answers.description}
+
   ${
     answers.confirmInstallation
       ? `## Installation
-      To use this application, please follow the instructions below:
+  Please follow the instructions below:
+
   \`\`\`\
+
   ${answers.installation}
   \`\`\`\ `
       : ""
@@ -125,6 +129,7 @@ const generateReadMe = (answers) => {
       ? `## Tests
   Please follow the instructions below:
   \`\`\`\
+  
   ${answers.tests}
   \`\`\`\ `
       : ""
@@ -134,6 +139,22 @@ const generateReadMe = (answers) => {
     answers.email
   }
   ## Github
-  You can find more of my work on my GitHub profile ${answers.github}
-  `;
+  You can find more of my work on my [GitHub profile](https://github.com/${
+    answers.githubUserName
+  })`;
 };
+
+// 3. declare your init function to ask questions
+const init = async () => {
+  // 1. get answers for first set of questions
+  const answers = await inquirer.prompt(prompts);
+
+  // 2. Generate the Readme
+  const readMe = generateReadMe(answers);
+
+  // 3. write to file generate readme
+  fs.writeFileSync("generated-ReadMe.md", readMe);
+};
+
+// 4. start your application
+init();
