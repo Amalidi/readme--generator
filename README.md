@@ -20,15 +20,8 @@ Therefore this application which uses Node.js application will help you generate
 
 To use this application, please follow the instructions below:
 
-Click the "Code" button within this GitHub repo to copy the SSH Keys:
-
 ```
 git clone git@github.com:Amalidi/readme--generator.git
-```
-
-Enter the correct repository and install the packages
-
-```
 cd readme--generator
 npm install
 ```
