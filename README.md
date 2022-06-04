@@ -44,7 +44,7 @@ MIT License
 
 Please click [here]() to view the demo of the application.
 
-## Github
+## Contact
 
 If you have any questions about the repo, please contact me via [email](A.idi12@outlook.com).
 

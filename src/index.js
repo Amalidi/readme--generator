@@ -139,6 +139,7 @@ const generateReadMe = (answers) => {
   If you have any questions about the repo, please contact me via email ${
     answers.email
   }
+  
   You can find more of my work on my [GitHub profile](https://github.com/${
     answers.githubUserName
   })`;
