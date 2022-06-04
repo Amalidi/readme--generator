@@ -84,57 +84,56 @@ const prompts = [
 ];
 
 const generateReadMe = (answers) => {
-  //console.log("answers: " + JSON.stringify(answers));
-
-  return `# Title: ${answers.title} ![MIT](https://img.shields.io/badge/${answers.license}-License-green)
-## Table of Contents
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
-- [Github](#github)
-## Description
-${answers.title}
-## Installation
-Please follow the instructions below:
-\`\`\`
-${answers.installation}
-\`\`\`
-## Usage
-Please follow the instructions below:
-\`\`\`
-${answers.usage}
-\`\`\`
-## License
-${answers.license}
-## Contributing
-${answers.contributors}
-## Tests
-Please follow the instructions below:
-\`\`\`
-${answers.tests}
-\`\`\`
-## Questions
-${answers.email}
-## Github
-${answers.github}
-`;
+  return `# Title: ${answers.title} ![MIT](https://img.shields.io/badge/${
+    answers.license
+  }-License-green)
+  ## Table of Contents
+  - [Description](#description)
+  ${answers.confirmInstallation ? `- [Installation](#installation)` : ""}
+  - [Usage](#usage)
+  - [License](#license)
+  ${answers.confirmContributing ? `- [Contributing](#contributing)` : ""}
+  ${answers.confirmTests ? `- [Tests](#tests)` : ""}
+  - [Questions](#questions)
+  - [Github](#github)
+  ## Description
+  ${answers.title}
+  ${
+    answers.confirmInstallation
+      ? `## Installation
+      To use this application, please follow the instructions below:
+  \`\`\`\
+  ${answers.installation}
+  \`\`\`\ `
+      : ""
+  }
+  ## Usage
+  Once installed run the following command:
+  \`\`\`
+  ${answers.usage}
+  \`\`\`
+  ## License
+  ${answers.license}
+  ${
+    answers.confirmContributing
+      ? `## Contributing
+  ${answers.contributing}`
+      : ""
+  }
+  ${
+    answers.confirmTests
+      ? `## Tests
+  Please follow the instructions below:
+  \`\`\`\
+  ${answers.tests}
+  \`\`\`\ `
+      : ""
+  }
+  ## Questions
+  If you have any questions about the repo, please contact me via email ${
+    answers.email
+  }
+  ## Github
+  You can find more of my work on my GitHub profile ${answers.github}
+  `;
 };
-
-// 3. declare your init function to ask questions
-const init = async () => {
-  // 1. get answers for first set of questions
-  const answers = await inquirer.prompt(prompts);
-
-  // 2. Generate the Readme
-  const readMe = generateReadMe(answers);
-
-  // 3. write to file generate readme
-  fs.writeFileSync("generatedReadMe.md", readMe);
-};
-
-// 4. start your application
-init();
