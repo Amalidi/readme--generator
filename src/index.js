@@ -16,8 +16,7 @@ const prompts = [
   {
     type: "confirm",
     name: "confirmInstallation",
-    message:
-      "Would you like to give a installation guildances for your project?",
+    message: "Does your project require an installation process?",
   },
   {
     type: "input",
@@ -95,7 +94,6 @@ const generateReadMe = (answers) => {
   ${answers.confirmContributing ? `- [Contributing](#contributing)` : ""}
   ${answers.confirmTests ? `- [Tests](#tests)` : ""}
   - [Questions](#questions)
-  - [Github](#github)
 
   ## Description
 
@@ -139,7 +137,7 @@ const generateReadMe = (answers) => {
   If you have any questions about the repo, please contact me via email ${
     answers.email
   }
-  
+
   You can find more of my work on my [GitHub profile](https://github.com/${
     answers.githubUserName
   })`;

@@ -42,7 +42,7 @@ MIT License
 
 ## Link to Demo Video
 
-Please click [here]() to view the demo of the application.
+Please click [here](https://drive.google.com/file/d/1RKErFB_uHFSD1nnKBhECNsWT1yDSTNU2/view) to view the demo of the application.
 
 ## Contact
 
